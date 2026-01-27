@@ -1,0 +1,61 @@
+@use './variables' as *;
+
+.clients {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  background-color: $white;
+
+  width: 100%;
+}
+
+.clients__title {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  color: $text-dark;
+}
+
+.clients-grid {
+  width: 100%;
+}
+
+.clients-grid__row {
+  display: flex;
+  width: 100%;
+}
+.client {
+  flex: 1 0 25%;
+  height: 120px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+
+  img {
+    max-width: 100%;
+    object-fit: contain;
+  }
+}
+
+.client--hillel        { background: #1C4280; }
+.client--wannabiz     { background: #143646; }
+.client--tapgerine    { background: #F48B30; }
+.client--3dlook       { background: #9E4DC3; }
+
+.client--orangear     { background: #FD9339; }
+.client--adtelligent  { background: #E2E2E4; }
+.client--clickky      { background: #C71C36; }
+.client--ecoleasing   { background: #DCF3F9; }
+
+.client--infratek     { background: #EAEAEA; }
+.client--citypark     { background: #282240; }
+.client--artprint     { background: #1D4568; }
+.client--ultimatecard { background: #000000; }
+
