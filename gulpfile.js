@@ -11,21 +11,22 @@ const deploy = require('gulp-gh-pages');
 const isProduction = true;
 
 const paths = {
-  styles: {
-    src: 'styles/**/*.scss',
-    dest: 'dist/css'
-  },
+    styles: {
+        src: 'styles/main.scss',
+        watch: 'styles/**/*.scss',
+        dest: 'dist/styles'
+    },
   scripts: {
     src: 'js/**/*.js',
     dest: 'dist/js'
   },
   images: {
-    src: 'images/**/*',
-    dest: 'dist/images'
+    src: 'img/**/*',
+    dest: 'dist/img'
   },
   sprite: {
-    src: './sprite.svg',
-    dest: 'dist'
+    src: './img/sprite.svg',
+    dest: 'dist/img'
   },
   pages: {
     src: ['pages/**/*.html', 'index.html'],
@@ -62,14 +63,14 @@ function sprite() {
     .pipe(gulp.dest(paths.sprite.dest)); // Copy sprite.svg to dist folder
 }
 
-// Optimize images
-async function images() {
-  const imagemin = (await import('gulp-imagemin')).default;
-  return gulp.src(paths.images.src)
-    .pipe(gulpIf(isProduction, imagemin())) // Optimize images if in production mode
-    .pipe(gulp.dest(paths.images.dest))
-    .pipe(browserSync.stream()); // Stream changes to BrowserSync
+// Copy images (no optimization)
+function images() {
+    return gulp.src(paths.images.src)
+        .pipe(gulp.dest(paths.images.dest))
+        .pipe(browserSync.stream());
 }
+
+
 
 // Minify HTML and update paths for CSS files
 async function pages() {
@@ -79,9 +80,9 @@ async function pages() {
     .pipe(replace(/xlink:href="\.\//g, 'xlink:href="./')) // Fix paths for SVG sprites
     .pipe(replace(/href="(\.\/|\.\.\/)styles\/([^"]+)"/g, (match, prefix, cssFile) => {
       if (prefix === '../') {
-        return `href="../css/${cssFile}"`; // Adjust CSS paths for production build
+        return `href="../styles/${cssFile}"`; // Adjust CSS paths for production build
       } else {
-        return `href="./css/${cssFile}"`; // Adjust CSS paths for development build
+        return `href="./styles/${cssFile}"`; // Adjust CSS paths for development build
       }
     }))
     .pipe(gulpIf(isProduction, htmlmin({ collapseWhitespace: true }))) // Minify HTML if in production mode

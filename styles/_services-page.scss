@@ -1,0 +1,139 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+.service-entry {
+  padding: 60px 0;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    padding: 0 180px;
+  }
+
+  &__icon {
+    width: 92px;
+    height: 92px;
+    background: $white;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      width: 64px;
+      height: 64px;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 46px;
+    text-align: center;
+
+    background: $red-text-reversed;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+
+  &__text {
+    width: 1080px;
+    font-family: $font-main;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 30px;
+    text-align: center;
+    color: $white;
+    margin: 0;
+  }
+
+  &__btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 18px 30px;
+    height: 56px;
+    border-radius: $r-12;
+
+    background: $blue;
+    box-shadow: 0 0 20px rgba(36, 163, 255, 0.5);
+
+    color: $white;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+
+    cursor: pointer;
+  }
+}
+
+.service-area {
+  padding: 0 0 60px;
+
+  &__container {
+    padding: 0 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+  }
+
+  &__line {
+    width: 1080px;
+    height: 4px;
+    background: rgba($white, 0.5);
+  }
+
+  &__title {
+    margin: 0;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 27px;
+    color: $white;
+  }
+
+  &__grid {
+    width: 1080px;
+    display: flex;
+    gap: 60px;
+  }
+
+  &__col {
+    width: 510px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  &__item {
+    position: relative;
+    padding-left: 14px;
+    margin: 0;
+
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 26px;
+    color: $white;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: $pink;
+    }
+  }
+
+}

@@ -19,13 +19,32 @@
 
   &__logo {
     flex: 0 0 auto;
+    display: flex;
+    align-items: flex-start;
+    gap: 4px;
 
     img {
       height: 60px;
       width: auto;
     }
+
+  }
+  .header {
+    &__logo-slash {
+      width: 21px;
+      height: 47px;
+      flex: 0 0 auto;
+    }
   }
 
+
+  &__logo-page {
+    display: inline-block;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 44px;
+    color: $white;
+  }
   &__right {
     flex: 1;
     min-width: 0;
@@ -137,6 +156,7 @@
       transition: 0.2s ease-in-out;
     }
   }
+
 }
 
 @include media($md) {
@@ -160,4 +180,5 @@
       display: none;
     }
   }
+
 }
