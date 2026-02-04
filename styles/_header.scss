@@ -92,7 +92,7 @@
 
   &__address {
     font-size: 16px;
-    color: $text-muted-2;
+    color: $text-muted;
     white-space: nowrap;
 
     &:hover {
@@ -182,3 +182,40 @@
   }
 
 }
+
+
+.header--light {
+  .header__address,
+  .header__phone,
+  .header__languages{
+    color: $grey-text;
+  }
+  .header__address,
+  .header__phone{
+    &:hover
+    {color: $blue;}
+  }
+  .header__dot {
+    background: $grey-separator;
+  }
+
+  .header__social-icon {
+    color: $grey-text;
+  }
+
+  .nav a {
+    color: $blue;
+
+    &:hover {
+      color: $pink;
+      border-color: $pink;
+    }
+  }
+
+
+
+  .header__logo-page {
+    color: $text-dark;
+  }
+}
+

@@ -16,51 +16,51 @@ const paths = {
         watch: 'styles/**/*.scss',
         dest: 'dist/styles'
     },
-  scripts: {
-    src: 'js/**/*.js',
-    dest: 'dist/js'
-  },
-  images: {
-    src: 'img/**/*',
-    dest: 'dist/img'
-  },
-  sprite: {
-    src: './img/sprite.svg',
-    dest: 'dist/img'
-  },
-  pages: {
-    src: ['pages/**/*.html', 'index.html'],
-    dest: 'dist'
-  }
+    scripts: {
+        src: 'js/**/*.js',
+        dest: 'dist/js'
+    },
+    images: {
+        src: 'img/**/*',
+        dest: 'dist/img'
+    },
+    sprite: {
+        src: './img/sprite.svg',
+        dest: 'dist/img'
+    },
+    pages: {
+        src: ['pages/**/*.html', 'index.html'],
+        dest: 'dist'
+    }
 };
 
 // Compile and minify SCSS
 async function styles() {
-  const autoprefixer = (await import('gulp-autoprefixer')).default;
+    const autoprefixer = (await import('gulp-autoprefixer')).default;
 
-  return gulp.src(paths.styles.src)
-    .pipe(gulpSass({ outputStyle: 'compressed' }).on('error', gulpSass.logError))
-    .pipe(autoprefixer({
-      overrideBrowserslist: ['last 3 versions'], // Adjust according to your project requirements
-      cascade: false
-    }))
-    .pipe(gulpIf(isProduction, cleanCSS()))
-    .pipe(gulp.dest(paths.styles.dest))
-    .pipe(browserSync.stream()); // Stream changes to BrowserSync
+    return gulp.src(paths.styles.src)
+        .pipe(gulpSass({outputStyle: 'compressed'}).on('error', gulpSass.logError))
+        .pipe(autoprefixer({
+            overrideBrowserslist: ['last 3 versions'], // Adjust according to your project requirements
+            cascade: false
+        }))
+        .pipe(gulpIf(isProduction, cleanCSS()))
+        .pipe(gulp.dest(paths.styles.dest))
+        .pipe(browserSync.stream()); // Stream changes to BrowserSync
 }
 
 // Minify JavaScript
 function scripts() {
-  return gulp.src(paths.scripts.src)
-    .pipe(uglify())
-    .pipe(gulp.dest(paths.scripts.dest))
-    .pipe(browserSync.stream()); // Stream changes to BrowserSync
+    return gulp.src(paths.scripts.src)
+        .pipe(uglify())
+        .pipe(gulp.dest(paths.scripts.dest))
+        .pipe(browserSync.stream()); // Stream changes to BrowserSync
 }
 
 // Copy sprite.svg to dist
 function sprite() {
-  return gulp.src(paths.sprite.src)
-    .pipe(gulp.dest(paths.sprite.dest)); // Copy sprite.svg to dist folder
+    return gulp.src(paths.sprite.src)
+        .pipe(gulp.dest(paths.sprite.dest)); // Copy sprite.svg to dist folder
 }
 
 // Copy images (no optimization)
@@ -71,48 +71,47 @@ function images() {
 }
 
 
-
 // Minify HTML and update paths for CSS files
 async function pages() {
-  const htmlmin = (await import('gulp-htmlmin')).default;
+    const htmlmin = (await import('gulp-htmlmin')).default;
 
-  return gulp.src(paths.pages.src, { base: './' })
-    .pipe(replace(/xlink:href="\.\//g, 'xlink:href="./')) // Fix paths for SVG sprites
-    .pipe(replace(/href="(\.\/|\.\.\/)styles\/([^"]+)"/g, (match, prefix, cssFile) => {
-      if (prefix === '../') {
-        return `href="../styles/${cssFile}"`; // Adjust CSS paths for production build
-      } else {
-        return `href="./styles/${cssFile}"`; // Adjust CSS paths for development build
-      }
-    }))
-    .pipe(gulpIf(isProduction, htmlmin({ collapseWhitespace: true }))) // Minify HTML if in production mode
-    .pipe(gulp.dest(paths.pages.dest))
-    .pipe(browserSync.stream()); // Stream changes to BrowserSync
+    return gulp.src(paths.pages.src, {base: './'})
+        .pipe(replace(/xlink:href="\.\//g, 'xlink:href="./')) // Fix paths for SVG sprites
+        .pipe(replace(/href="(\.\/|\.\.\/)styles\/([^"]+)"/g, (match, prefix, cssFile) => {
+            if (prefix === '../') {
+                return `href="../styles/${cssFile}"`; // Adjust CSS paths for production build
+            } else {
+                return `href="./styles/${cssFile}"`; // Adjust CSS paths for development build
+            }
+        }))
+        .pipe(gulpIf(isProduction, htmlmin({collapseWhitespace: true}))) // Minify HTML if in production mode
+        .pipe(gulp.dest(paths.pages.dest))
+        .pipe(browserSync.stream()); // Stream changes to BrowserSync
 }
 
 // Watch files for changes
 function watch() {
-  browserSync.init({
-    server: {
-      baseDir: './dist' // Serve files from the dist folder
-    },
-    startPath: '/index.html', // Start with index.html
-    middleware: [
-      function (req, res, next) {
-        if (req.url.endsWith('.css')) {
-          res.setHeader('Content-Type', 'text/css'); // Set correct MIME type for CSS files
-        }
-        next();
-      }
-    ]
-  });
+    browserSync.init({
+        server: {
+            baseDir: './dist' // Serve files from the dist folder
+        },
+        startPath: '/index.html', // Start with index.html
+        middleware: [
+            function (req, res, next) {
+                if (req.url.endsWith('.css')) {
+                    res.setHeader('Content-Type', 'text/css'); // Set correct MIME type for CSS files
+                }
+                next();
+            }
+        ]
+    });
 
-  // Watch tasks for changes
-  gulp.watch(paths.styles.src, styles); // Watch SCSS files
-  gulp.watch(paths.scripts.src, scripts); // Watch JS files
-  gulp.watch(paths.images.src, images); // Watch image files
-  gulp.watch(paths.sprite.src, sprite); // Watch sprite.svg file
-  gulp.watch(paths.pages.src, pages).on('change', browserSync.reload); // Watch HTML files
+    // Watch tasks for changes//
+    gulp.watch('styles/**/*.scss', styles);// Watch all SCSS files
+    gulp.watch(paths.scripts.src, scripts); // Watch JS files
+    gulp.watch(paths.images.src, images); // Watch image files
+    gulp.watch(paths.sprite.src, sprite); // Watch sprite.svg file
+    gulp.watch(paths.pages.src, pages).on('change', browserSync.reload); // Watch HTML files
 }
 
 // Define complex tasks
@@ -121,7 +120,7 @@ const dev = gulp.series(build, watch); // Development task with watch mode
 
 // Deploy task
 gulp.task('deploy', function () {
-  return gulp.src('./dist/**/*').pipe(deploy())
+    return gulp.src('./dist/**/*').pipe(deploy())
 });
 
 const deployGithubPages = gulp.series(build, 'deploy');
