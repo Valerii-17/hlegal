@@ -216,4 +216,60 @@
   }
 }
 
+@media (max-width: 768px) {
+
+  .contact {
+    padding: 60px 0;
+  }
+
+  .contact__container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 60px;
+    padding: 0 60px;
+  }
+
+  .contact-info,
+  .contact-form {
+    flex: none;
+    width: 100%;
+    max-width: 648px;
+  }
+
+  .contact-info__address,
+  .contact-info__line,
+  .contact-info__links,
+  .contact-info__facebook {
+    max-width: 648px;
+  }
+
+  .contact-form {
+    max-width: 648px;
+  }
+
+  .contact-form__input,
+  .contact-form__textarea,
+  .contact-form__btn {
+    max-width: 588px;
+  }
+
+  .footer {
+    padding: 30px 60px;
+  }
+
+  .footer__row {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .footer__contacts {
+    align-items: flex-start;
+  }
+
+  .footer__copy {
+    text-align: center;
+  }
+}
 
