@@ -11,6 +11,8 @@
 <body class="contact-page">
 
 <header class="header header--light">
+    <input type="checkbox" id="menu-toggle" class="header__menu-toggle" hidden>
+
     <div class="container header__container">
 
         <a href="../index.html" class="header__logo">
@@ -18,6 +20,12 @@
             <img src="../img/slash.svg" alt="" class="header__logo-slash" aria-hidden="true">
             <span class="header__logo-page">contact</span>
         </a>
+
+        <label for="menu-toggle" class="header__burger" aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
 
         <div class="header__right">
             <div class="header__top">
@@ -50,13 +58,14 @@
                     <li><a href="../pages/services.html">services</a></li>
                     <li><a href="#">team</a></li>
                     <li><a href="#">publications</a></li>
-                    <li><a href="#">contact</a></li>
+                    <li><a href="../pages/contact.html">contact</a></li>
                 </ul>
             </nav>
         </div>
 
     </div>
 </header>
+
 
 <main class="contact">
     <div class="container contact__container">
