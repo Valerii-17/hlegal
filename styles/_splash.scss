@@ -1,9 +1,0 @@
-@use './variables' as *;
-
-.splash {
-  background: $bg-gradient;
-  border-bottom-left-radius: $r-12;
-  border-bottom-right-radius: $r-12;
-  position: relative;
-  overflow: hidden;
-}
