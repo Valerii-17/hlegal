@@ -1,0 +1,31 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hlegal — Contact</title><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="../styles/main.css"></head><body class="contact-page"><header class="header header--light"><input type="checkbox" id="menu-toggle" class="header__menu-toggle" hidden><div class="container header__container"><a href="../index.html" class="header__logo"><img src="../img/logo2.svg" alt="Hlegal logo"> <img src="../img/slash.svg" alt="" class="header__logo-slash" aria-hidden="true"> <span class="header__logo-page-1">contact</span> </a><label for="menu-toggle" class="header__burger" aria-label="Open menu"><span></span> <span></span> <span></span></label><div class="header__right"><div class="header__top"><div class="header__languages"><a href="#">ук</a> <a href="#">de</a> <a href="#">en</a></div><span class="header__dot"></span> <a href="#" class="header__address">Kyiv, Mechnikova str, 14/1</a> <span class="header__dot"></span> <a href="tel:0800211927" class="header__phone">0800 211 927</a> <span class="header__dot"></span> <a href="#" class="header__social" aria-label="Facebook"><svg class="header__social-icon" aria-hidden="true"><use href="../img/sprite.svg#facebook"></use></svg></a></div><nav class="header__nav"><ul class="nav"><li><a href="#">about us</a></li><li><a href="../pages/service.html">services</a></li><li><a href="#">team</a></li><li><a href="#">publications</a></li><li><a href="../pages/contact.html">contact</a></li></ul></nav></div></div></header><main class="contact"><div class="container contact__container"><!-- LEFT --><section class="contact-info"><div class="contact-info__address">Kyiv,<br>Mechnikova str, 14</div><div class="contact-info__line"></div><div class="contact-info__links"><a class="contact-info__phone" href="tel:0800211927">0800 211 927</a> <a class="contact-info__email" href="mailto:contact@forstudy.space">contact@forstudy.space</a></div><div class="contact-info__line"></div><a class="contact-info__facebook" href="#" aria-label="Facebook"><svg class="contact-info__fb-icon" aria-hidden="true"><use href="../img/sprite.svg#facebook-2"></use></svg> <span class="contact-info__fb-text">OUR PAGE<br>ON FACEBOOK</span></a></section><!-- RIGHT --><section class="contact-form"><h1 class="contact-form__title">We would like to help you</h1><form class="contact-form__form"><div class="contact-form__group"><input class="contact-form__input" type="text" placeholder="Name" required> <textarea class="contact-form__textarea" placeholder="Message" required></textarea></div><div class="contact-form__caption">How to answer you?</div><div class="contact-form__group"><input class="contact-form__input" type="tel" placeholder="Phone number" required pattern="[0-9]{10}" title="Please enter a valid phone number 10 digits"> <input class="contact-form__input" type="email" placeholder="Email" required></div><button class="contact-form__btn" type="submit"><span class="btn-text">Send message</span> <img src="../img/spinner.svg" alt="spinner" class="btn-spinner" aria-hidden="true"></button></form></section></div></main><!-- FOOTER --><footer class="footer"><div class="container footer__container"><div class="footer__row"><div class="footer__contacts"><div class="footer__line"><span class="footer__address">Kyiv, Mechnikova str, 14/1</span> <span class="footer__dot" aria-hidden="true"></span> <a class="footer__map" href="#">ON MAP</a></div><div class="footer__line"><a class="footer__fb" href="#" aria-label="Facebook"><svg aria-hidden="true"><use href="../img/sprite.svg#facebook-2"></use></svg> </a><span class="footer__dot" aria-hidden="true"></span> <a class="footer__phone" href="tel:0800211927">0800 211 927</a> <span class="footer__dot" aria-hidden="true"></span> <a class="footer__email" href="mailto:contact@forstudy.space">contact@forstudy.space</a></div></div><div class="footer__copy">© 2021 HLEGAL Law company, LLC</div></div></div></footer><script>const form = document.querySelector('.contact-form__form');
+    const button = form.querySelector('.contact-form__btn');
+    const text = button.querySelector('.btn-text');
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+        }
+
+        button.classList.add('loading');
+        button.disabled = true;
+
+        setTimeout(() => {
+            button.classList.remove('loading');
+            button.classList.add('sent');
+            text.textContent = 'Sent';
+
+
+            form.reset();
+
+            setTimeout(() => {
+                button.classList.remove('sent');
+                text.textContent = 'Send message';
+                button.disabled = false;
+            }, 1500);
+
+        }, 2000);
+    });</script></body></html>
