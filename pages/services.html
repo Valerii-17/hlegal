@@ -13,6 +13,8 @@
 <section class="splash">
 
     <header class="header">
+        <input type="checkbox" id="menu-toggle" class="header__menu-toggle" hidden>
+
         <div class="container header__container">
 
             <a href="../index.html" class="header__logo">
@@ -20,6 +22,12 @@
                 <img src="../img/slash.svg" alt="splash" class="header__logo-slash" aria-hidden="true"
                 /> <span class="header__logo-page">services</span>
             </a>
+
+            <label for="menu-toggle" class="header__burger_1" aria-label="Open menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
 
             <div class="header__right">
 
@@ -54,7 +62,7 @@
                 <nav class="header__nav">
                     <ul class="nav">
                         <li><a href="#">about us</a></li>
-                        <li><a href="../pages/services.html">services</a></li>
+                        <li><a href="../pages/service.html">services</a></li>
                         <li><a href="#">team</a></li>
                         <li><a href="#">publications</a></li>
                         <li><a href="../pages/contact.html">contact</a></li>
@@ -63,76 +71,76 @@
 
             </div>
         </div>
-</header>
+    </header>
 
-        <!--service entry-->
-        <div class="service-entry">
-            <div class="container service-entry__container">
+    <!--service entry-->
+    <div class="service-entry">
+        <div class="container service-entry__container">
 
-                <div class="service-entry__icon">
-                    <svg aria-hidden="true">
-                        <use href="../img/sprite.svg#ecommerce"></use>
-                    </svg>
-                </div>
+            <div class="service-entry__icon">
+                <svg aria-hidden="true">
+                    <use href="../img/sprite.svg#ecommerce"></use>
+                </svg>
+            </div>
 
-                <h1 class="service-entry__title">IT and e-commerce</h1>
+            <h1 class="service-entry__title">IT and e-commerce</h1>
 
-                <p class="service-entry__text">
-                    An endless stream of contracts, tax issues, labor relations, corporate papers - legal work distracts
-                    you from doing business.
-                    But there is not much work to do to hire an in-house lawyer.
-                </p>
-                <p class="service-entry__text">
-                    In addition, over time, the work will become the same type and
-                    uninteresting for a full-time lawyer. And we know very well how difficult it is to find a good
-                    candidate with experience in
-                    the field of information technology in Ukraine.</p>
+            <p class="service-entry__text">
+                An endless stream of contracts, tax issues, labor relations, corporate papers - legal work distracts
+                you from doing business.
+                But there is not much work to do to hire an in-house lawyer.
+            </p>
+            <p class="service-entry__text">
+                In addition, over time, the work will become the same type and
+                uninteresting for a full-time lawyer. And we know very well how difficult it is to find a good
+                candidate with experience in
+                the field of information technology in Ukraine.</p>
 
-                <label for="contact-popup-toggle" class="service-entry__btn">
-                    Free consultation
-                </label>
+            <label for="contact-popup-toggle" class="service-entry__btn">
+                Free consultation
+            </label>
 
+        </div>
+    </div>
+
+    <!--services area-->
+    <section class="service-area">
+        <div class="container service-area__container">
+            <div class="service-area__line" aria-hidden="true"></div>
+
+            <h3 class="service-area__title">Services in this area:</h3>
+
+            <div class="service-area__grid">
+                <ul class="service-area__col">
+                    <li class="service-area__item">support of investment projects for the development of port
+                        infrastructure;
+                    </li>
+                    <li class="service-area__item">certification of GTS, entering information about them in mandatory
+                        databases and registers;
+                    </li>
+                    <li class="service-area__item">registration of permits for the construction of port terminals;</li>
+                    <li class="service-area__item">registration of permit and other mandatory documentation required for
+                        carrying out activities in the port (emission permit, conclusion on EIA, RTC, etc.);
+                    </li>
+                </ul>
+
+                <ul class="service-area__col">
+                    <li class="service-area__item">support of procedures related to the lease of state property in the
+                        port;
+                    </li>
+                    <li class="service-area__item">support of procedures related to confirmation of the status of port
+                        operator, maritime agent, foreign sailing line;
+                    </li>
+                    <li class="service-area__item">support of procedures related to the inclusion of the company within
+                        the port;
+                    </li>
+                    <li class="service-area__item">appeals against actions related to the illegal imposition of services
+                        in the port by monopoly companies.
+                    </li>
+                </ul>
             </div>
         </div>
-
-        <!--services area-->
-        <section class="service-area">
-            <div class="container service-area__container">
-                <div class="service-area__line" aria-hidden="true"></div>
-
-                <h3 class="service-area__title">Services in this area:</h3>
-
-                <div class="service-area__grid">
-                    <ul class="service-area__col">
-                        <li class="service-area__item">support of investment projects for the development of port
-                            infrastructure;
-                        </li>
-                        <li class="service-area__item">certification of GTS, entering information about them in mandatory
-                            databases and registers;
-                        </li>
-                        <li class="service-area__item">registration of permits for the construction of port terminals;</li>
-                        <li class="service-area__item">registration of permit and other mandatory documentation required for
-                            carrying out activities in the port (emission permit, conclusion on EIA, RTC, etc.);
-                        </li>
-                    </ul>
-
-                    <ul class="service-area__col">
-                        <li class="service-area__item">support of procedures related to the lease of state property in the
-                            port;
-                        </li>
-                        <li class="service-area__item">support of procedures related to confirmation of the status of port
-                            operator, maritime agent, foreign sailing line;
-                        </li>
-                        <li class="service-area__item">support of procedures related to the inclusion of the company within
-                            the port;
-                        </li>
-                        <li class="service-area__item">appeals against actions related to the illegal imposition of services
-                            in the port by monopoly companies.
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+    </section>
 </section>
 
 <div class="services-shadow" aria-hidden="true">
@@ -168,7 +176,8 @@
                     <div class="post-card__date">April 22</div>
                     <div class="post-card__divider" aria-hidden="true"></div>
                     <p class="post-card__text">
-                        I'm a jun on projects. I am a co-owner of a law firm. How it happened. Before entering my parents told me that if I…
+                        I'm a jun on projects. I am a co-owner of a law firm. How it happened. Before entering my
+                        parents told me that if I…
                     </p>
                 </div>
             </article>
@@ -185,7 +194,8 @@
                     <div class="post-card__date">September 29</div>
                     <div class="post-card__divider" aria-hidden="true"></div>
                     <p class="post-card__text">
-                        And why the recovery of 50 million euros could be a fateful precedent According to Mind.ua January 21 National Commission for Data Protection.
+                        And why the recovery of 50 million euros could be a fateful precedent According to Mind.ua
+                        January 21 National Commission for Data Protection.
                     </p>
                 </div>
             </article>
@@ -200,7 +210,8 @@
                     <div class="post-card__date">August 19</div>
                     <div class="post-card__divider" aria-hidden="true"></div>
                     <p class="post-card__text">
-                        What and how modern vloggers, opinion leaders and crypto-millionaires will inherit A typical legacy of the Ukrainian generation X looks like this: an apartment in…
+                        What and how modern vloggers, opinion leaders and crypto-millionaires will inherit A typical
+                        legacy of the Ukrainian generation X looks like this: an apartment in…
                     </p>
                 </div>
             </article>
@@ -248,8 +259,6 @@
 </footer>
 
 
-
-
 <!--Pop up-->
 <div class="popup" aria-hidden="true">
     <label for="contact-popup-toggle" class="popup__overlay" aria-label="Close popup"></label>
@@ -272,7 +281,6 @@
             <button class="popup__btn" type="submit">Send message</button>
         </form>
     </div>
-
 
 
 </div>

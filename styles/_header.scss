@@ -36,14 +36,20 @@
       flex: 0 0 auto;
     }
   }
-
+  &__logo-page-1{
+    display: inline-block;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 100%;
+    color: black;
+  }
 
   &__logo-page {
     display: inline-block;
     font-weight: 400;
     font-size: 36px;
-    line-height: 44px;
-    color: $text-dark;
+    line-height: 100%;
+    color: white;
   }
   &__right {
     flex: 1;
@@ -98,7 +104,7 @@
     white-space: nowrap;
 
     &:hover {
-      color: $blue;
+      color: $text-main;
       transition: 0.2s;
     }
   }
@@ -110,7 +116,7 @@
     white-space: nowrap;
 
     &:hover {
-      color: $blue;
+      color: $text-main;
       transition: 0.2s;
     }
   }
@@ -257,7 +263,12 @@
 @media (max-width: $sm)
 {
   .header {
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    padding: 0;
   }
 
   .header__container {
@@ -274,7 +285,7 @@
   .header__top {
     grid-area: top;
     width: 100%;
-    background: $grey-bg;
+    background: #F5F5FA33;
     padding: 10px 15px;
     justify-content: space-between;
     align-items: center;
@@ -328,6 +339,26 @@
     height: 2px;
     background: $bg-1;
   }
+
+  .header__burger_1 {
+    grid-area: burger;
+    display: inline-flex;
+    width: 32px;
+    height: 32px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+  }
+
+  .header__burger_1 span {
+    display: block;
+    width: 18px;
+    height: 2px;
+    background: white;
+  }
+
 
   /* NAV DROPDOWN */
   .header__nav {

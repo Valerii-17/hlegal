@@ -79,7 +79,17 @@
     align-items: center;
     justify-content: center;
     color: $pink;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    will-change: transform;
+
   }
+
+  &:hover .service-card__icon {
+    transform: scale(1.15);
+
+  }
+
 
   &__title {
     margin: 0;
@@ -97,7 +107,4 @@
     margin-top: -15px;
   }
 }
-
-
-
 

@@ -137,3 +137,150 @@
   }
 
 }
+
+
+@media (max-width: 768px) {
+  .service-entry {
+    padding-top: 30px;
+  }
+
+  .service-entry__container {
+    max-width: 688px;
+    margin: 0 auto;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .service-entry__icon {
+    width: 92px;
+    height: 92px;
+  }
+
+  .service-entry__title {
+    font-size: 38px;
+    line-height: 46px;
+    white-space: nowrap;
+  }
+
+  .service-entry__text {
+    max-width: 640px;
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  .service-entry__btn {
+    margin-top: 10px;
+  }
+
+  .service-area {
+    padding: 60px 0;
+  }
+
+  .service-area__container {
+    max-width: 688px;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .service-area__title {
+    margin-bottom: 30px;
+  }
+
+  .service-area__grid {
+    display: grid;
+    max-width: 768px;
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
+  }
+  .service-area__col {
+    max-width: 294px;
+    width: auto;
+  }
+
+  .service-area__item {
+    font-size: 16px;
+    line-height: 26px;
+  }
+}
+
+
+@media (max-width: 375px) {
+  .service-entry {
+    padding: 130px 0 30px;
+  }
+
+  .service-entry__container {
+    max-width: 315px;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    text-align: center;
+  }
+
+
+  .service-entry__title {
+    margin: 0;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 37px;
+
+  }
+
+  .service-entry__text {
+    margin: 0;
+    font-size: 19px;
+    line-height: 30px;
+    max-width: 315px;
+  }
+
+  .service-entry__btn {
+    width: 100%;
+    max-width: 210px;
+    height: 56px;
+    margin-top: 0
+  }
+
+  .service-area {
+    padding: 0;
+  }
+
+  .service-area__container {
+    max-width: 315px;
+    margin: 0 auto;
+  }
+
+  .service-area__line {
+    width: 315px;
+    height: 4px;
+    margin: 0;
+  }
+
+  .service-area__title {
+    margin: 0;
+  }
+
+  .service-area__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .service-area__item {
+    position: relative;
+    margin: 0 0 15px;
+    padding-left: 14px;
+
+    font-size: 18px;
+    line-height: 26px;
+
+  }
+}
+

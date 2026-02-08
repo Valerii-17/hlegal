@@ -14,11 +14,17 @@
 <section class="splash">
     <!--HEADER -->
     <header class="header">
+        <input type="checkbox" id="menu-toggle" class="header__menu-toggle" hidden>
         <div class="container header__container">
 
             <a href="#" class="header__logo">
                 <img src="./img/logo.svg" alt="Hlegal logo">
             </a>
+            <label for="menu-toggle" class="header__burger_1" aria-label="Open menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
 
             <div class="header__right">
 
@@ -53,7 +59,7 @@
                 <nav class="header__nav">
                     <ul class="nav">
                         <li><a href="#">about us</a></li>
-                        <li><a href="./pages/services.html">services</a></li>
+                        <li><a href="./pages/service.html">services</a></li>
                         <li><a href="#">team</a></li>
                         <li><a href="#">publications</a></li>
                         <li><a href="./pages/contact.html">contact</a></li>
@@ -73,11 +79,12 @@
 
         <div class="container hero__container">
             <h1 class="hero__title">you legal solutions provider</h1>
-            <label for="contact-popup-toggle" class="hero__scroll" aria-label="Open contact form">
+            <a href="#publications" class="hero__scroll" aria-label="Scroll to publications">
                 <svg class="hero__scroll-icon" aria-hidden="true">
                     <use href="./img/sprite.svg#scroll"></use>
                 </svg>
-            </label>
+            </a>
+
 
         </div>
     </div>
@@ -85,13 +92,14 @@
     <section class="intro" id="intro">
         <div class="intro__container">
             <div class="intro__row">
-                <div class="intro__left">
-                    <a href="#" class="intro__item is-active">Consistent</a>
-                    <a href="#" class="intro__item">Customer oriented</a>
-                    <a href="#" class="intro__item">Innovative</a>
-                    <a href="#" class="intro__item">Business oriented</a>
+                <div class="intro__tabs">
+                    <div class="intro__left">
+                        <a href="#" class="intro__item is-active">Consistent</a>
+                        <a href="#" class="intro__item">Customer oriented</a>
+                        <a href="#" class="intro__item">Innovative</a>
+                        <a href="#" class="intro__item">Business oriented</a>
+                    </div>
                 </div>
-
                 <div class="intro__divider" aria-hidden="true"></div>
 
                 <div class="intro__right">
@@ -112,7 +120,7 @@
     <section class="services" id="services">
         <div class="container">
 
-            <a href="#" class="services__link">
+            <a href="./pages/service.html" class="services__link">
                 Services
                 <svg class="services__arrow" aria-hidden="true">
                     <use href="./img/sprite.svg#arrow-right"></use>
@@ -234,207 +242,209 @@
 <main>
 
 
+    <div class="spacer"></div>
 
+    <!-- TEAM -->
+    <section class="team" id="team">
+        <div class="container team__container">
 
-        <!-- TEAM -->
-        <section class="team" id="team">
-            <div class="container team__container">
-
-                <article class="team-card">
-                    <div class="team-card__img">
-                        <img src="./img/team.png" alt="Team member">
-                    </div>
-
-                    <div class="team-card__content">
-                        <a href="#" class="section-link">
-                            команда
-                            <svg class="section-link__icon" aria-hidden="true">
-                                <use href="./img/sprite.svg#arrow-right"></use>
-                            </svg>
-                        </a>
-
-                        <h2 class="team-card__quote">
-                            Ми звикли брати на себе відповідальність та завжди гарантуємо чесну, вчасну допомогу, навіть у ситуаціях, коли більшість безсилі.
-                        </h2>
-
-                        <div class="team-card__person">
-                            <div class="team-card__name">Олександр Олександровський</div>
-                            <div class="team-card__role">Керуючий партнер</div>
-                        </div>
-                    </div>
-                </article>
-
-                <div class="team__pager" aria-label="Team slider pagination">
-                    <button class="pager-dot is-active" type="button" aria-label="Slide 1"></button>
-                    <button class="pager-dot" type="button" aria-label="Slide 2"></button>
-                    <button class="pager-dot" type="button" aria-label="Slide 3"></button>
+            <article class="team-card">
+                <div class="team-card__img">
+                    <img src="./img/team.png" alt="Team member">
                 </div>
 
-            </div>
-        </section>
-
-        <div class="spacer"></div>
-        <!-- CLIENTS -->
-        <section class="clients" id="clients">
-            <h3 class="clients__title">THEY ALREADY TRUST US</h3>
-
-            <div class="clients-grid">
-                <div class="clients-grid__row">
-                    <a class="client client--hillel" href="#" aria-label="Hillel">
-                        <img src="./img/clients/hillel.svg" alt="hillel">
-                    </a>
-                    <a class="client client--wannabiz" href="#" aria-label="WannaBiz">
-                        <img src="./img/clients/wannabiz.svg" alt="wannabiz">
-                    </a>
-                    <a class="client client--tapgerine" href="#" aria-label="tapgerine">
-                        <img src="./img/clients/tapgerine.svg" alt="tapgerine">
-                    </a>
-                    <a class="client client--3dlook" href="#" aria-label="3dlook">
-                        <img src="./img/clients/3dlook.svg" alt="3dlook">
-                    </a>
-                </div>
-
-                <div class="clients-grid__row">
-                    <a class="client client--orangear" href="#" aria-label="orangear">
-                        <img src="./img/clients/orangear.svg" alt="">
-                    </a>
-                    <a class="client client--adtelligent" href="#" aria-label="adtelligent">
-                        <img src="./img/clients/adtelligent.svg" alt="">
-                    </a>
-                    <a class="client client--clickky" href="#" aria-label="clickky">
-                        <img src="./img/clients/clickky.svg" alt="">
-                    </a>
-                    <a class="client client--ecoleasing" href="#" aria-label="ecoleasing">
-                        <img src="./img/clients/ecoleasing.svg" alt="">
-                    </a>
-                </div>
-
-                <div class="clients-grid__row">
-                    <a class="client client--infratek" href="#" aria-label="infratek">
-                        <img src="./img/clients/infratek.svg" alt="">
-                    </a>
-                    <a class="client client--citypark" href="#" aria-label="city park">
-                        <img src="./img/clients/citypark.svg" alt="">
-                    </a>
-                    <a class="client client--artprint" href="#" aria-label="art-print studio">
-                        <img src="./img/clients/artprint.svg" alt="">
-                    </a>
-                    <a class="client client--ultimatecard" href="#" aria-label="ultimate card">
-                        <img src="./img/clients/ultimatecard.svg" alt="">
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- PUBLICATIONS -->
-        <section class="publications" id="publications">
-            <div class="container publications__container">
-
-                <div class="publications__head">
+                <div class="team-card__content">
                     <a href="#" class="section-link">
-                        Publications
+                        команда
                         <svg class="section-link__icon" aria-hidden="true">
                             <use href="./img/sprite.svg#arrow-right"></use>
                         </svg>
                     </a>
 
-                    <h2 class="publications__title">We have something to tell</h2>
+                    <h2 class="team-card__quote">
+                        Ми звикли брати на себе відповідальність та завжди гарантуємо чесну, вчасну допомогу, навіть у
+                        ситуаціях, коли більшість безсилі.
+                    </h2>
+
+                    <div class="team-card__person">
+                        <div class="team-card__name">Олександр Олександровський</div>
+                        <div class="team-card__role">Керуючий партнер</div>
+                    </div>
                 </div>
+            </article>
 
-                <div class="publications-grid">
-                    <article class="post-card">
-                        <a class="post-card__cover" href="#">
-                            <img src="./img/post-1.jpg" alt="post">
-                        </a>
-
-                        <div class="post-card__body">
-                            <a class="post-card__title" href="#">Equity associate</a>
-                            <div class="post-card__date">April 22</div>
-                            <div class="post-card__divider" aria-hidden="true"></div>
-                            <p class="post-card__text">
-                                I'm a jun on projects. I am a co-owner of a law firm. How it happened. Before entering my parents told me that if I…
-                            </p>
-                        </div>
-                    </article>
-
-                    <article class="post-card">
-                        <a class="post-card__cover" href="#">
-                            <img src="./img/post-2.jpg" alt="post">
-                        </a>
-
-                        <div class="post-card__body">
-                            <a class="post-card__title" href="#">
-                                Penalty for the Good Corporation: what will happen to Google and others for violating the GDPR
-                            </a>
-                            <div class="post-card__date">September 29</div>
-                            <div class="post-card__divider" aria-hidden="true"></div>
-                            <p class="post-card__text">
-                                And why the recovery of 50 million euros could be a fateful precedent According to Mind.ua January 21 National Commission for Data Protection.
-                            </p>
-                        </div>
-                    </article>
-
-                    <article class="post-card">
-                        <a class="post-card__cover" href="#">
-                            <img src="./img/post-3.jpg" alt="post">
-                        </a>
-
-                        <div class="post-card__body">
-                            <a class="post-card__title" href="#">Millennial Testament</a>
-                            <div class="post-card__date">August 19</div>
-                            <div class="post-card__divider" aria-hidden="true"></div>
-                            <p class="post-card__text">
-                                What and how modern vloggers, opinion leaders and crypto-millionaires will inherit A typical legacy of the Ukrainian generation X looks like this: an apartment in…
-                            </p>
-                        </div>
-                    </article>
-                </div>
-
+            <div class="team__pager" aria-label="Team slider pagination">
+                <button class="pager-dot is-active" type="button" aria-label="Slide 1"></button>
+                <button class="pager-dot" type="button" aria-label="Slide 2"></button>
+                <button class="pager-dot" type="button" aria-label="Slide 3"></button>
             </div>
-        </section>
 
-        <!-- FOOTER -->
-        <footer class="footer">
-            <div class="container footer__container">
-                <div class="footer__separator" aria-hidden="true"></div>
+        </div>
+    </section>
 
-                <div class="footer__row">
-                    <div class="footer__contacts">
+    <div class="spacer"></div>
+    <!-- CLIENTS -->
+    <section class="clients" id="clients">
+        <h3 class="clients__title">THEY ALREADY TRUST US</h3>
 
-                        <div class="footer__line">
-                            <span class="footer__address">Kyiv, Mechnikova str, 14/1</span>
-                            <span class="footer__dot" aria-hidden="true"></span>
-                            <a class="footer__map" href="#">ON MAP</a>
-                        </div>
+        <div class="clients-grid">
+            <div class="clients-grid__row">
+                <a class="client client--hillel" href="#" aria-label="Hillel">
+                    <img src="./img/clients/hillel.svg" alt="hillel">
+                </a>
+                <a class="client client--wannabiz" href="#" aria-label="WannaBiz">
+                    <img src="./img/clients/wannabiz.svg" alt="wannabiz">
+                </a>
+                <a class="client client--tapgerine" href="#" aria-label="tapgerine">
+                    <img src="./img/clients/tapgerine.svg" alt="tapgerine">
+                </a>
+                <a class="client client--3dlook" href="#" aria-label="3dlook">
+                    <img src="./img/clients/3dlook.svg" alt="3dlook">
+                </a>
+            </div>
 
-                        <div class="footer__line">
-                            <a class="footer__fb" href="#" aria-label="Facebook">
-                                <svg aria-hidden="true">
-                                    <use href="./img/sprite.svg#facebook-2"></use>
-                                </svg>
-                            </a>
+            <div class="clients-grid__row">
+                <a class="client client--orangear" href="#" aria-label="orangear">
+                    <img src="./img/clients/orangear.svg" alt="">
+                </a>
+                <a class="client client--adtelligent" href="#" aria-label="adtelligent">
+                    <img src="./img/clients/adtelligent.svg" alt="">
+                </a>
+                <a class="client client--clickky" href="#" aria-label="clickky">
+                    <img src="./img/clients/clickky.svg" alt="">
+                </a>
+                <a class="client client--ecoleasing" href="#" aria-label="ecoleasing">
+                    <img src="./img/clients/ecoleasing.svg" alt="">
+                </a>
+            </div>
 
-                            <span class="footer__dot" aria-hidden="true"></span>
+            <div class="clients-grid__row">
+                <a class="client client--infratek" href="#" aria-label="infratek">
+                    <img src="./img/clients/infratek.svg" alt="">
+                </a>
+                <a class="client client--citypark" href="#" aria-label="city park">
+                    <img src="./img/clients/citypark.svg" alt="">
+                </a>
+                <a class="client client--artprint" href="#" aria-label="art-print studio">
+                    <img src="./img/clients/artprint.svg" alt="">
+                </a>
+                <a class="client client--ultimatecard" href="#" aria-label="ultimate card">
+                    <img src="./img/clients/ultimatecard.svg" alt="">
+                </a>
+            </div>
+        </div>
+    </section>
 
-                            <a class="footer__phone" href="tel:0800211927">0800 211 927</a>
+    <!-- PUBLICATIONS -->
+    <section class="publications" id="publications">
+        <div class="container publications__container">
 
-                            <span class="footer__dot" aria-hidden="true"></span>
+            <div class="publications__head">
+                <a href="#" class="section-link">
+                    Publications
+                    <svg class="section-link__icon" aria-hidden="true">
+                        <use href="./img/sprite.svg#arrow-right"></use>
+                    </svg>
+                </a>
 
-                            <a class="footer__email" href="mailto:contact@forstudy.space">contact@forstudy.space</a>
-                        </div>
+                <h2 class="publications__title">We have something to tell</h2>
+            </div>
 
+            <div class="publications-grid">
+                <article class="post-card">
+                    <a class="post-card__cover" href="#">
+                        <img src="./img/post-1.jpg" alt="post">
+                    </a>
+
+                    <div class="post-card__body">
+                        <a class="post-card__title" href="#">Equity associate</a>
+                        <div class="post-card__date">April 22</div>
+                        <div class="post-card__divider" aria-hidden="true"></div>
+                        <p class="post-card__text">
+                            I'm a jun on projects. I am a co-owner of a law firm. How it happened. Before entering my
+                            parents told me that if I…
+                        </p>
+                    </div>
+                </article>
+
+                <article class="post-card">
+                    <a class="post-card__cover" href="#">
+                        <img src="./img/post-2.jpg" alt="post">
+                    </a>
+
+                    <div class="post-card__body">
+                        <a class="post-card__title" href="#">
+                            Penalty for the Good Corporation: what will happen to Google and others for violating the
+                            GDPR
+                        </a>
+                        <div class="post-card__date">September 29</div>
+                        <div class="post-card__divider" aria-hidden="true"></div>
+                        <p class="post-card__text">
+                            And why the recovery of 50 million euros could be a fateful precedent According to Mind.ua
+                            January 21 National Commission for Data Protection.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="post-card">
+                    <a class="post-card__cover" href="#">
+                        <img src="./img/post-3.jpg" alt="post">
+                    </a>
+
+                    <div class="post-card__body">
+                        <a class="post-card__title" href="#">Millennial Testament</a>
+                        <div class="post-card__date">August 19</div>
+                        <div class="post-card__divider" aria-hidden="true"></div>
+                        <p class="post-card__text">
+                            What and how modern vloggers, opinion leaders and crypto-millionaires will inherit A typical
+                            legacy of the Ukrainian generation X looks like this: an apartment in…
+                        </p>
+                    </div>
+                </article>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer__container">
+            <div class="footer__separator" aria-hidden="true"></div>
+
+            <div class="footer__row">
+                <div class="footer__contacts">
+
+                    <div class="footer__line">
+                        <span class="footer__address">Kyiv, Mechnikova str, 14/1</span>
+                        <span class="footer__dot" aria-hidden="true"></span>
+                        <a class="footer__map" href="#">ON MAP</a>
                     </div>
 
-                    <div class="footer__copy">© 2021 HLEGAL Law company, LLC</div>
+                    <div class="footer__line">
+                        <a class="footer__fb" href="#" aria-label="Facebook">
+                            <svg aria-hidden="true">
+                                <use href="./img/sprite.svg#facebook-2"></use>
+                            </svg>
+                        </a>
+
+                        <span class="footer__dot" aria-hidden="true"></span>
+
+                        <a class="footer__phone" href="tel:0800211927">0800 211 927</a>
+
+                        <span class="footer__dot" aria-hidden="true"></span>
+
+                        <a class="footer__email" href="mailto:contact@forstudy.space">contact@forstudy.space</a>
+                    </div>
+
                 </div>
+
+                <div class="footer__copy">© 2021 HLEGAL Law company, LLC</div>
             </div>
-        </footer>
-
-
+        </div>
+    </footer>
 
 
 </main>
-
 
 
 <div class="popup" aria-hidden="true">
@@ -446,22 +456,11 @@
             <label for="contact-popup-toggle" class="popup__close" aria-label="Close popup">×</label>
         </div>
 
-        <form class="popup__form">
-            <input class="popup__input" type="text" placeholder="Name">
-            <textarea class="popup__textarea" placeholder="Message"></textarea>
 
-            <div class="popup__caption">How to answer you?</div>
-
-            <input class="popup__input" type="tel" placeholder="Phone number">
-            <input class="popup__input" type="email" placeholder="Email">
-
-            <button class="popup__btn" type="submit">Send message</button>
-        </form>
     </div>
 </div>
 
 </body>
-
 
 
 </html>

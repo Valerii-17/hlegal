@@ -70,62 +70,6 @@ $symbol-h: 820px;
   }
 }
 
-@include media($md) {
-  $symbol-top-md: 40px;
-  $symbol-h-md: 520px;
-
-  .hero {
-    padding-top: 40px;
-
-    &__symbol {
-      width: 420px;
-      height: $symbol-h-md;
-      top: $symbol-top-md;
-    }
-
-    &__container {
-      min-height: 560px;
-    }
-
-    &__title {
-      top: calc(#{$symbol-top-md} + #{$symbol-h-md} / 2);
-      font-size: 32px;
-      line-height: 40px;
-    }
-
-    &__scroll {
-      top: calc(#{$symbol-top-md} + #{$symbol-h-md} - 34px);
-    }
-  }
-}
-
-@include media($sm) {
-  $symbol-top-sm: 30px;
-  $symbol-h-sm: 380px;
-
-  .hero {
-    &__symbol {
-      width: 280px;
-      height: $symbol-h-sm;
-      top: $symbol-top-sm;
-    }
-
-    &__container {
-      min-height: 420px;
-    }
-
-    &__title {
-      top: calc(#{$symbol-top-sm} + #{$symbol-h-sm} / 2);
-      font-size: 26px;
-      line-height: 34px;
-    }
-
-    &__scroll {
-      top: calc(#{$symbol-top-sm} + #{$symbol-h-sm} - 30px);
-    }
-  }
-}
-
 
 .popup {
   position: fixed;
@@ -205,7 +149,6 @@ $symbol-h: 820px;
     cursor: pointer;
     flex: 0 0 auto;
     user-select: none;
-
     font-size: 0;
 
     &::before,
@@ -343,19 +286,4 @@ $symbol-h: 820px;
   pointer-events: auto;
 }
 
-@media (max-width: 720px) {
-  .popup__content {
-    width: calc(100% - 32px);
-    height: auto;
-  }
-
-  .popup__head,
-  .popup__form,
-  .popup__input,
-  .popup__textarea,
-  .popup__caption,
-  .popup__btn {
-    width: 100%;
-  }
-}
 
