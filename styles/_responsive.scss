@@ -1,7 +1,7 @@
 @use './variables' as *;
 @use './mixins' as *;
 
-@media (max-width: 768px) {
+@media (max-width: 968px) {
 
 
   .hero {
@@ -167,7 +167,7 @@
     max-width: 768px;
     width: 100%;
     margin: 0 auto;
-    padding: 0 60px;
+    padding: 60px 60px;
 
     display: flex;
     flex-direction: column;
@@ -398,7 +398,7 @@
 
 }
 
-@media (max-width: 375px) {
+@media (max-width: 450px) {
 
   /* ================== HERO ================== */
   .hero {

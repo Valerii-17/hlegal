@@ -14,7 +14,7 @@
   }
 
   &__row {
-    width: 1080px;
+    max-width: 1080px;
     height: 303px;
 
     display: flex;
@@ -59,7 +59,7 @@
   }
 
   &__right {
-    width: 581px;
+    max-width: 581px;
     height: 217px;
 
     display: flex;
